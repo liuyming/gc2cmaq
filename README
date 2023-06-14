@@ -1,17 +1,17 @@
-##----------------------------------------------------------------------
-##
-##  GC2CMAQ v1.0
-##  Developed on 2022/01/10 by Yiming Liu
-##  Assistant Professor
-##  School of Atmospheric Sciences, Sun Yat-sen University
-##
-##  Comments and suggestions are welcome.
-##  Please mail to liuym88@mail.sysu.edu.cn
-##
-##  Update on 2022/10/01:  Keep the interpolated concentration above zero.
-##
-##
-##----------------------------------------------------------------------
+#----------------------------------------------------------------------
+#
+#  GC2CMAQ v1.0
+#  Developed on 2022/01/10 by Yiming Liu
+#  Assistant Professor
+#  School of Atmospheric Sciences, Sun Yat-sen University
+#
+#  Comments and suggestions are welcome.
+#  Please mail to liuym88@mail.sysu.edu.cn
+#
+#  Update on 2022/10/01:  Keep the interpolated concentration above zero.
+#
+#
+#----------------------------------------------------------------------
 
 This programe is developed to provide IC/BC of the CMAQ model from 
 the GEOS-Chem outputs. It is developed based on MOZART2CAMX 
