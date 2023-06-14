@@ -1,0 +1,14 @@
+#!/bin/csh -f
+
+set infile  = G2Lconv_SAPRC07TIC_AE6I_from_GEOS-Chem.txt
+set outfile = G2Lconv_SAPRC07TIC_AE6I_from_GEOS-Chem.EXT
+
+#set infile  = G2Lconv_CB05E51_AE6_from_GEOS-Chem.txt
+#set outfile = G2Lconv_CB05E51_AE6_from_GEOS-Chem.EXT
+
+rm -fv $outfile
+
+./GC_EXT_prep << IEOF
+spc mapp txt file  |$infile
+output EXT file    |$outfile
+IEOF

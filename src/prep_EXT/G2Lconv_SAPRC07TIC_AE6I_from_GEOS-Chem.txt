@@ -1,0 +1,441 @@
+!****
+!SPECIES LIST OF SAPRC07TIC_AE6I_AQKMTI MECHAMISM (CMAQ v5.2.1) from GEOS-Chem
+!****
+# G = Gas, A = Aerosol
+# I3   NAME (A12)   MW(F7.2)
+#III==CCCCCCCCCCCC==RRRR.RR
+G  1  ACETONE          0.00
+G  2  ACETYLENE        0.00
+G  3  ALK1             0.00
+G  4  ALK2             0.00
+G  5  ALK3             0.00
+G  6  ALK4             0.00
+G  7  ALK5             0.00
+G  8  APIN             0.00
+G  9  BALD             0.00
+G 10  BENZENE          0.00
+G 11  CCHO             0.00
+G 12  CCOOH            0.00
+G 13  CCOOOH           0.00
+G 14  CL               0.00
+G 15  CL2              0.00
+G 16  CLNO2            0.00
+G 17  CLO              0.00
+G 18  CLONO2           0.00
+G 19  CO               0.00
+G 20  COOH             0.00
+G 21  ETHENE           0.00
+G 22  GLY              0.00
+G 23  HC5              0.00
+G 24  HCHO             0.00
+G 25  HCL              0.00
+G 26  HCOOH            0.00
+G 27  HNO3             0.00
+G 28  HNO4             0.00
+G 29  HO2H             0.00
+G 30  HOCCHO           0.00
+G 31  HOCL             0.00
+G 32  HONO             0.00
+G 33  ISOPRENE         0.00
+G 34  MACR             0.00
+G 35  MAPAN            0.00
+G 36  MEK              0.00
+G 37  MEOH             0.00
+G 38  MGLY             0.00
+G 39  MVK              0.00
+G 40  MXYL             0.00
+G 41  N2O5             0.00
+G 42  NH3              0.00
+G 43  NO               0.00
+G 44  NO2              0.00
+G 45  NO3              0.00
+G 46  NPHE             0.00
+G 47  O3               0.00
+G 48  OXYL             0.00
+G 49  PAN              0.00
+G 50  PAN2             0.00
+G 51  PRD2             0.00
+G 52  PROPENE          0.00
+G 53  PXYL             0.00
+G 54  PYRUACD          0.00
+G 55  RCHO             0.00
+G 56  RNO3             0.00
+G 57  ROOH             0.00
+G 58  SO2              0.00
+G 59  SOAALK           0.00
+G 60  TOLUENE          0.00
+A 61  AALJ            27.00
+A 62  ACAJ            40.10
+A 63  ACLJ            35.50
+A 64  ACLK            35.50
+A 65  AECI            12.00
+A 66  AECJ            12.00
+A 67  AFEJ            55.80
+A 68  AGLYJ           66.40
+A 69  AIVPO1J        266.00
+A 70  AKJ             39.10
+A 71  ALVOO1I        136.00
+A 72  ALVOO1J        136.00
+A 73  ALVOO2I        136.00
+A 74  ALVOO2J        136.00
+A 75  ALVPO1I        218.00
+A 76  ALVPO1J        218.00
+A 77  AMGJ            24.30
+A 78  AMNJ            54.90
+A 79  ANAJ            23.00
+A 80  ANH4I           18.00
+A 81  ANH4J           18.00
+A 82  ANO3I           62.00
+A 83  ANO3J           62.00
+A 84  ANO3K           62.00
+A 85  AOTHRJ         200.00
+A 86  ASEACAT         23.75
+A 87  ASIJ            28.10
+A 88  ASO4I           96.00
+A 89  ASO4J           96.00
+A 90  ASO4K           96.00
+A 91  ASOIL          100.00
+A 92  ASVOO1I        135.00
+A 93  ASVOO1J        135.00
+A 94  ASVOO2I        135.00
+A 95  ASVOO2J        135.00
+A 96  ASVOO3J        134.00
+A 97  ASVPO1I        230.00
+A 98  ASVPO1J        230.00
+A 99  ASVPO2I        241.00
+A100  ASVPO2J        241.00
+A101  ASVPO3J        253.00
+A102  ATIJ            47.90
+END
+#
+# The geoschem standard output species list
+#
+#III==CCCCCCCC
+   1  ACET    
+   2  ACTA    
+   3  AERI    
+   4  ALD2    
+   5  ALK4    
+   6  AONITA  
+   7  AROMP4  
+   8  AROMP5  
+   9  ATOOH   
+  10  BALD    
+  11  BCPI    
+  12  BCPO    
+  13  BENZ    
+  14  BENZP   
+  15  Br      
+  16  Br2     
+  17  BrCl    
+  18  BrNO2   
+  19  BrNO3   
+  20  BrO     
+  21  BrSALA  
+  22  BrSALC  
+  23  BZCO3H  
+  24  BZPAN   
+  25  C2H2    
+  26  C2H4    
+  27  C2H6    
+  28  C3H8    
+  29  CCl4    
+  30  CFC11   
+  31  CFC113  
+  32  CFC114  
+  33  CFC115  
+  34  CFC12   
+  35  CH2Br2  
+  36  CH2Cl2  
+  37  CH2I2   
+  38  CH2IBr  
+  39  CH2ICl  
+  40  CH2O    
+  41  CH3Br   
+  42  CH3CCl3 
+  43  CH3Cl   
+  44  CH3I    
+  45  CH4     
+  46  CHBr3   
+  47  CHCl3   
+  48  Cl      
+  49  Cl2     
+  50  Cl2O2   
+  51  ClNO2   
+  52  ClNO3   
+  53  ClO     
+  54  CLOCK   
+  55  ClOO    
+  56  CO      
+  57  CSL     
+  58  DMS     
+  59  DST1    
+  60  DST2    
+  61  DST3    
+  62  DST4    
+  63  EOH     
+  64  ETHLN   
+  65  ETHN    
+  66  ETHP    
+  67  ETNO3   
+  68  ETP     
+  69  GLYC    
+  70  GLYX    
+  71  H1211   
+  72  H1301   
+  73  H2402   
+  74  H2O     
+  75  H2O2    
+  76  HAC     
+  77  HBr     
+  78  HC5A    
+  79  HCFC123 
+  80  HCFC141b
+  81  HCFC142b
+  82  HCFC22  
+  83  HCl     
+  84  HCOOH   
+  85  HI      
+  86  HMHP    
+  87  HMML    
+  88  HMS     
+  89  HNO2    
+  90  HNO3    
+  91  HNO4    
+  92  HOBr    
+  93  HOCl    
+  94  HOI     
+  95  HONIT   
+  96  HPALD1  
+  97  HPALD2  
+  98  HPALD3  
+  99  HPALD4  
+ 100  HPETHNL 
+ 101  I       
+ 102  I2      
+ 103  I2O2    
+ 104  I2O3    
+ 105  I2O4    
+ 106  IBr     
+ 107  ICHE    
+ 108  ICl     
+ 109  ICN     
+ 110  ICPDH   
+ 111  IDC     
+ 112  IDCHP   
+ 113  IDHDP   
+ 114  IDHPE   
+ 115  IDN     
+ 116  IEPOXA  
+ 117  IEPOXB  
+ 118  IEPOXD  
+ 119  IHN1    
+ 120  IHN2    
+ 121  IHN3    
+ 122  IHN4    
+ 123  INDIOL  
+ 124  INO     
+ 125  INPB    
+ 126  INPD    
+ 127  IO      
+ 128  IONITA  
+ 129  IONO    
+ 130  IONO2   
+ 131  IPRNO3  
+ 132  ISALA   
+ 133  ISALC   
+ 134  ISOP    
+ 135  ITCN    
+ 136  ITHN    
+ 137  LIMO    
+ 138  LVOC    
+ 139  LVOCOA  
+ 140  MACR    
+ 141  MACR1OOH
+ 142  MAP     
+ 143  MCRDH   
+ 144  MCRENOL 
+ 145  MCRHN   
+ 146  MCRHNB  
+ 147  MCRHP   
+ 148  MCT     
+ 149  MEK     
+ 150  MENO3   
+ 151  MGLY    
+ 152  MOH     
+ 153  MONITA  
+ 154  MONITS  
+ 155  MONITU  
+ 156  MP      
+ 157  MPAN    
+ 158  MPN     
+ 159  MSA     
+ 160  MTPA    
+ 161  MTPO    
+ 162  MVK     
+ 163  MVKDH   
+ 164  MVKHC   
+ 165  MVKHCB  
+ 166  MVKHP   
+ 167  MVKN    
+ 168  MVKPC   
+ 169  N2O     
+ 170  N2O5    
+ 171  NH3     
+ 172  NH4     
+ 173  NIT     
+ 174  NITs    
+ 175  NO      
+ 176  NO2     
+ 177  NO3     
+ 178  NPHEN   
+ 179  NPRNO3  
+ 180  O3      
+ 181  OClO    
+ 182  OCPI    
+ 183  OCPO    
+ 184  OCS     
+ 185  OIO     
+ 186  PAN     
+ 187  pFe     
+ 188  PHEN    
+ 189  PIP     
+ 190  PP      
+ 191  PPN     
+ 192  PROPNN  
+ 193  PRPE    
+ 194  PRPN    
+ 195  PYAC    
+ 196  R4N2    
+ 197  R4P     
+ 198  RA3P    
+ 199  RB3P    
+ 200  RCHO    
+ 201  RIPA    
+ 202  RIPB    
+ 203  RIPC    
+ 204  RIPD    
+ 205  RP      
+ 206  SALA    
+ 207  SALAAL  
+ 208  SALACL  
+ 209  SALC    
+ 210  SALCAL  
+ 211  SALCCL  
+ 212  SO2     
+ 213  SO4     
+ 214  SO4s    
+ 215  SOAGX   
+ 216  SOAIE   
+ 217  SOAP    
+ 218  SOAS    
+ 219  TOLU    
+ 220  XYLE    
+END
+#
+# MAPPING TABLE
+# (i3, 1x, a12, 1x, a255) , (f8.5, 1x, a8) for each Geos specie field, + as separator
+#II CCCCCCCCC   = I.IIIII CCCCCCC + I.IIIII CCCCCCC + I.IIIII CCCCCCC + I.IIIII CCCCCCC
+  1 ACETONE     = 1.00000 ACET     
+  2 ACETYLENE   = 1.00000 C2H2     
+  3 ALK1        = 1.00000 C2H6     
+  4 ALK2        = 1.00000 C3H8     
+  5 ALK3        = 0.40000 ALK4     
+  6 ALK4        = 0.20000 ALK4     
+  7 ALK5        = 0.20000 ALK4     
+  8 APIN        = 0.50000 MTPA     
+  9 BALD        = 1.00000 BALD     
+ 10 BENZENE     = 1.00000 BENZ     
+ 11 CCHO        = 1.00000 ALD2     
+ 12 CCOOH       = 1.00000 ACTA     
+ 13 CCOOOH      = 1.00000 MAP      
+ 14 CL          = 1.00000 Cl       
+ 15 CL2         = 1.00000 Cl2      
+ 16 CLNO2       = 1.00000 ClNO2    
+ 17 CLO         = 1.00000 ClO      
+ 18 CLONO2      = 1.00000 ClNO3    
+ 19 CO          = 1.00000 CO       
+ 20 COOH        = 1.00000 MP       
+ 21 ETHENE      = 1.00000 C2H4     
+ 22 GLY         = 1.00000 GLYX     
+ 23 HC5         = 1.00000 HC5A     
+ 24 HCHO        = 1.00000 CH2O     
+ 25 HCL         = 1.00000 HCl      
+ 26 HCOOH       = 1.00000 HCOOH    
+ 27 HNO3        = 1.00000 HNO3     
+ 28 HNO4        = 1.00000 HNO4     
+ 29 HO2H        = 1.00000 H2O2     
+ 30 HOCCHO      = 1.00000 GLYC     
+ 31 HOCL        = 1.00000 HOCl     
+ 32 HONO        = 1.00000 HNO2     
+ 33 ISOPRENE    = 1.00000 ISOP     
+ 34 MACR        = 1.00000 MACR     
+ 35 MAPAN       = 1.00000 MPAN     
+ 36 MEK         = 0.33300 MEK      
+ 37 MEOH        = 1.00000 MOH      
+ 38 MGLY        = 1.00000 MGLY     
+ 39 MVK         = 1.00000 MVK      
+ 40 MXYL        = 0.33300 XYLE     
+ 41 N2O5        = 1.00000 N2O5     
+ 42 NH3         = 1.00000 NH3      
+ 43 NO          = 1.00000 NO       
+ 44 NO2         = 1.00000 NO2      
+ 45 NO3         = 1.00000 NO3      
+ 46 NPHE        = 1.00000 NPHEN    
+ 47 O3          = 1.00000 O3       
+ 48 OXYL        = 0.33300 XYLE     
+ 49 PAN         = 1.00000 PAN      
+ 50 PAN2        = 1.00000 PPN      
+ 51 PRD2        = 0.66600 MEK      
+ 52 PROPENE     = 1.00000 PRPE     
+ 53 PXYL        = 0.33300 XYLE     
+ 54 PYRUACD     = 1.00000 PYAC     
+ 55 RCHO        = 1.00000 RCHO     
+ 56 RNO3        = 1.00000 R4N2     
+ 57 ROOH        = 1.00000 ETP     + 1.00000 PP      + 1.00000 PRPN    + 1.00000 R4P     + 1.00000 RA3P    + 1.00000 RB3P    + 1.00000 RP       
+ 58 SO2         = 1.00000 SO2      
+ 59 SOAALK      = 0.20000 ALK4     
+ 60 TOLUENE     = 1.00000 TOLU     
+ 61 AALJ        = 0.05695 DST1     
+ 62 ACAJ        = 0.07940 DST1    + 0.01180 SALA     
+ 63 ACLJ        = 0.00945 DST1    + 1.00000 SALACL   
+ 64 ACLK        = 0.01190 DST2    + 0.01190 DST3    + 0.01190 DST4    + 1.00000 SALCCL   
+ 65 AECI        = 0.00100 BCPI    + 0.00100 BCPO     
+ 66 AECJ        = 0.99900 BCPI    + 0.99900 BCPO     
+ 67 AFEJ        = 0.03355 DST1     
+ 68 AGLYJ       = 1.00000 SOAGX    
+ 69 AIVPO1J     = 0.10000 OCPI    + 0.10000 OCPO     
+ 70 AKJ         = 0.03770 DST1    + 0.01140 SALA     
+ 71 ALVOO1I     = 0.00100 OCPI    + 0.00100 OCPO     
+ 72 ALVOO1J     = 0.09900 OCPI    + 0.09900 OCPO     
+ 73 ALVOO2I     = 0.00100 OCPI    + 0.00100 OCPO     
+ 74 ALVOO2J     = 0.09900 OCPI    + 0.09900 OCPO     
+ 75 ALVPO1I     = 0.00100 OCPI    + 0.00100 OCPO     
+ 76 ALVPO1J     = 0.09900 OCPI    + 0.09900 OCPO     
+ 77 AMGJ        = 0.03680 SALA     
+ 78 AMNJ        = 0.00115 DST1     
+ 79 ANAJ        = 0.03935 DST1    + 0.30860 SALA     
+ 80 ANH4I       = 0.01000 NH4      
+ 81 ANH4J       = 0.99000 NH4     + 0.00005 DST1     
+ 82 ANO3I       = 0.01000 NIT      
+ 83 ANO3J       = 0.99000 NIT     + 0.00020 DST1    + 1.00000 NITs     
+ 84 ANO3K       = 0.00160 DST2    + 0.00160 DST3    + 0.00160 DST4     
+ 85 AOTHRJ      = 0.50219 DST1     
+ 86 ASEACAT     = 0.36850 SALC     
+ 87 ASIJ        = 0.19435 DST1     
+ 88 ASO4I       = 0.01000 SO4      
+ 89 ASO4J       = 0.99000 SO4     + 0.02250 DST1    + 0.07760 SALA    + 1.00000 SO4s     
+ 90 ASO4K       = 0.02655 DST2    + 0.02655 DST3    + 0.02655 DST4    + 0.07760 SALC     
+ 91 ASOIL       = 0.95995 DST2    + 0.95995 DST3    + 0.95995 DST4     
+ 92 ASVOO1I     = 0.00100 OCPI    + 0.00100 OCPO     
+ 93 ASVOO1J     = 0.09900 OCPI    + 0.09900 OCPO     
+ 94 ASVOO2I     = 0.00100 OCPI    + 0.00100 OCPO     
+ 95 ASVOO2J     = 0.09900 OCPI    + 0.09900 OCPO     
+ 96 ASVOO3J     = 0.10000 OCPI    + 0.10000 OCPO     
+ 97 ASVPO1I     = 0.00100 OCPI    + 0.00100 OCPO     
+ 98 ASVPO1J     = 0.09900 OCPI    + 0.09900 OCPO     
+ 99 ASVPO2I     = 0.00100 OCPI    + 0.00100 OCPO     
+100 ASVPO2J     = 0.09900 OCPI    + 0.09900 OCPO     
+101 ASVPO3J     = 0.10000 OCPI    + 0.10000 OCPO     
+102 ATIJ        = 0.00280 DST1     
+END

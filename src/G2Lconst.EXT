@@ -1,0 +1,25 @@
+
+!****
+!  This file is used by GLOBAL_2_LAMBC.F  
+!  and contains all constants used in 
+!  the program.
+!****
+
+      REAL     Rd         ! gas constant [J/K*kg]
+      REAL     MWair      ! molecular weight of air [g/mole]
+      REAL     P00        ! sea-level pressure [Pa]
+      REAL     Ts0        ! reference temperature at P00 [K]
+      REAL     g          ! gravitational constant [m/s**2]
+      REAL     A          ! measure of lapse rate [K]
+      REAL     Ptop       ! CMAQ model top pressure [Pa]    
+
+      REAL     CMAQ_HALF_SIGMA_LVL( MXLAYS3 )  ! CMAQ half sigma levels
+      REAL     CMAQ_SIGMA_LVL( MXLAYS3 + 1 )   ! CMAQ sigma levels
+
+      
+      DATA  Rd     / 287. /
+      DATA  MWair  / 29. /
+      DATA  P00    / 100000. /
+      DATA  Ts0    / 290. /
+      DATA  A      / 50. /
+      DATA  g      / 9.81 /

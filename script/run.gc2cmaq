@@ -1,0 +1,63 @@
+#!/bin/csh -f
+
+
+###########################################################################
+#  Run script for GC2CMAQ version 1.0
+#  The program is developed by Yiming Liu from Sun Yat-sen University
+#  E-mail: liuym88@mail.sysu.edu.cn
+###########################################################################
+
+#> Set Start and End Days for looping
+set START_DATE = "2020-08-21"     #> beginning date (July 1, 2011)
+set END_DATE   = "2020-08-21"     #> ending date    (July 14, 2011)
+
+setenv PROMPTFLAG N
+setenv IOAPI_ISPH 20
+
+setenv GRID_NAME CN27EC
+
+setenv MHOME    ${HOME}/liuyming/geos2cmaq/gc2cmaq
+setenv DPATH    ${MHOME}/data
+setenv OUTPATH  ${MHOME}/data/output
+mkdir -p $OUTPATH
+
+# =====================================================================
+#> Begin Loop Through Simulation Days
+# =====================================================================
+
+set TODAYG = ${START_DATE}
+set TODAYJ = `date -ud "${START_DATE}" +%Y%j` #> Convert YYYY-MM-DD to YYYYJJJ
+set STOP_DAY = `date -ud "${END_DATE}" +%Y%j` #> Convert YYYY-MM-DD to YYYYJJJ
+
+while ($TODAYJ <= $STOP_DAY )  #>Compare dates in terms of YYYYJJJ
+
+  #> Retrieve Calendar day Information
+  set YYYYMMDD = `date -ud "${TODAYG}" +%Y%m%d` #> Convert YYYY-MM-DD to YYYYMMDD
+  set YYMMDD = `date -ud "${TODAYG}" +%y%m%d`   #> Convert YYYY-MM-DD to YYMMDD
+  setenv YYYYJJJ  $TODAYJ
+
+  echo $YYYYMMDD $YYYYJJJ
+# DEFINE OUTPUT FILENAMES
+  setenv OUTFILEBC  $OUTPATH/bc.${GRID_NAME}.cmaq.saprc07tic_ae6i_aqkmti.${YYYYMMDD}.ncf
+  setenv OUTFILEIC  $OUTPATH/ic.${GRID_NAME}.cmaq.saprc07tic_ae6i_aqkmti.${YYYYMMDD}.hr0.ncf
+
+# DEFINE INPUT GEOS-Chem FILES AND MET FILES
+  setenv INFILE1    $DPATH/input/GEOSChem.BoundaryConditions.${YYYYMMDD}.nc4
+
+  setenv INFILEMET3D  $DPATH/mcip/${GRID_NAME}/${YYYYJJJ}/METCRO3D_${YYYYJJJ}
+  setenv INFILEMET2D  $DPATH/mcip/${GRID_NAME}/${YYYYJJJ}/METCRO2D_${YYYYJJJ}
+
+  rm $OUTFILEBC $OUTFILEIC
+
+../src/gc2cmaq_SAPRC07TIC_AE6I << IEOF 
+ProcessDateYYYYMMDD|$YYYYMMDD
+Output BC file?    |.true.
+Output IC file?    |.true.
+If IC, starting hr |0
+IEOF
+
+  #> Increment both Gregorian and Julian Days
+  set TODAYG = `date -ud "${TODAYG}+1days" +%Y-%m-%d` #> Add a day for tomorrow
+  set TODAYJ = `date -ud "${TODAYG}" +%Y%j` #> Convert YYYY-MM-DD to YYYYJJJ
+
+end  #Loop to the next Simulation Day
