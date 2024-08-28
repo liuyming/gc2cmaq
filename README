@@ -15,7 +15,14 @@
 
 This programe is developed to provide IC/BC of the CMAQ model from 
 the GEOS-Chem outputs. It is developed based on MOZART2CAMX 
-(https://www.camx.com). Thanks.
+(https://www.camx.com).
+
+Please cite the following reference if you use this tool. Thanks.
+Zhu, Y., Liu, Y., Li, S., Wang, H., Lu, X., Wang, H., Shen, C., Chen, X.,
+Chan, P., Shen, A., Wang, H., Jin, Y., Xu, Y., Fan, S., and Fan, Q.: 
+Assessment of tropospheric ozone simulations in a regional chemical transport model
+using GEOS-Chem outputs as chemical boundary conditions, Sci. Total Environ.,
+906, 167485, https://doi.org/10.1016/j.scitotenv.2023.167485, 2024.
 
 GC2CMAQ reads one GEOS-Chem (version 13.3) output files (in GMT) and 
 horizontally and vertically interpolates the data onto a CMAQ (v5.2.1)
