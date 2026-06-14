@@ -54,6 +54,10 @@
 !                      Added regional model 3D output option (jjung)
 !         2/2/2017  -- Added modal parameters for CMAQ, three number
 !                      and three surface concentrations (jjung)
+!         1/1/2022  -- Revised by Yiming Liu to build chemical boundry 
+!                      conditions for CMAQ model from GEOS-Chem model
+!         6/14/2026 -- Revised by Yiming Liu to allow the eastern CMAQ 
+!                      domain boundary to cross 180E
 !cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 !c Copyright (C) 2006-2017  Ramboll Environ
 !c
@@ -235,6 +239,8 @@
       CHARACTER(len=120) :: varname
       REAL, ALLOCATABLE ::  LMZPRESS(:,:,:)
       !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+      logical :: global_lon  ! Revised by Yiming Liu on 0614
 
       iproj = 2  ! let default be LCP for version 5 met
 
@@ -900,6 +906,17 @@ c          if (lon .lt. 0.0) lon=lon+360.
        gchm2cmaq_cent_ij(2,i,j) = int((cmaq_grd_ll(2,i,j) - GCHM_YORIG + 
      +    0.5*GCHM_YCELL)/GCHM_YCELL) 
 
+
+
+!    Revided by Yiming Liu on 0614 to check the lon of GC cover the globe 
+       global_lon = .false.
+       if (abs(float(GCHM_NCOLS)*GCHM_XCELL-360.0)
+     &     .lt. 0.01) then
+          global_lon = .true.
+       endif
+!       print *,'GLOBAL LONGITUDE = ',global_lon
+
+
 !      CHECK THAT DOMAIN IS INSIDE MOZART DOMAIN
        if (gchm2cmaq_grd_ij(1,i,j) .lt. 1 .or. 
      +     gchm2cmaq_grd_ij(2,i,j) .lt. 1 ) then
@@ -910,17 +927,22 @@ c          if (lon .lt. 0.0) lon=lon+360.
      +               gchm2cmaq_grd_ij(2,i,j)
            stop
        endif
-       if (gchm2cmaq_grd_ij(1,i,j)+1 .gt. GCHM_NCOLS .or.
-     +     gchm2cmaq_grd_ij(2,i,j)+1 .gt. GCHM_NROWS) then
-           print *, '*** MOZART domain needs to be expanded further ',
-     +              ' north and/or east'
-           print *, 'i,j,cmaq_grd_ll(1,i,j),cmaq_grd_ll(2,i,j)'
-           print *, i,j,cmaq_grd_ll(1,i,j),cmaq_grd_ll(2,i,j)
-           print *, 'MOZART i,j cell needed: ',
-     +              gchm2cmaq_grd_ij(1,i,j)+1,
-     +              gchm2cmaq_grd_ij(2,i,j)+1
-           print *, 'Max MOZART size: ', GCHM_NCOLS,GCHM_NROWS
-           stop
+
+!     Revised by Yiming Liu on 0614
+       if (gchm2cmaq_grd_ij(2,i,j)+1 .gt. GCHM_NROWS) then
+         if (gchm2cmaq_grd_ij(1,i,j)+1 .gt. GCHM_NCOLS) then
+           if (.not. global_lon) then
+             print *, '*** MOZART domain needs to be expanded further ',
+     +                 ' north and/or east'
+             print *, 'i,j,cmaq_grd_ll(1,i,j),cmaq_grd_ll(2,i,j)'
+             print *, i,j,cmaq_grd_ll(1,i,j),cmaq_grd_ll(2,i,j)
+             print *, 'MOZART i,j cell needed: ',
+     +               gchm2cmaq_grd_ij(1,i,j)+1,
+     +               gchm2cmaq_grd_ij(2,i,j)+1
+             print *,'Max MOZART size: ', GCHM_NCOLS,GCHM_NROWS
+             stop
+           endif
+         endif
        endif
 
        if (i.eq. 1 .and. j.eq. 1) then
@@ -1392,7 +1414,18 @@ c           SUM THEM TOGETHER.
 !     OUTPUTS
       real    ::  prof(nzm)
 
+!     Added by Yiming Liu on 0614
+      logical :: global_lonh
 
+
+!    Revided by Yiming Liu on 0614 to check the lon of GC cover the
+!    globe 
+      global_lonh = .false.
+      if (abs(float(nxm)*dxm-360.0)
+     &     .lt. 0.01) then
+         global_lonh = .true.
+      endif
+!      print *,'HINTERP GLOBAL LONGITUDE = ',global_lonh
 
 !     INITIALIZE
       do k=1,nzm
@@ -1404,8 +1437,16 @@ c           SUM THEM TOGETHER.
           do i=1,nxm
             var(i,j,k) = varin(i,j,k)
           enddo
-          var(nxm+1,j,k) = var(nxm,j,k)
-          var(0,j,k) = var(1,j,k)
+
+!       Revised by Yiming Liu on 0614
+          if(global_lonh) then
+             var(nxm+1,j,k)=var(1,j,k)
+             var(0,j,k)=var(nxm,j,k)
+          else
+             var(nxm+1,j,k)=var(nxm,j,k)
+             var(0,j,k)=var(1,j,k)
+          endif
+
         enddo
         do i=0,nxm+1
           var(i,nym+1,k) = var(i,nym,k)
